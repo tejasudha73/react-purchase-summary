@@ -13,8 +13,10 @@ import {DISCOUNT,NODISCOUNT } from "./constants";
   //state object to maintain total,discount and other information
     state = {
     promoBtnName: applyPromoCodeLabel,
+    promoBtnSign: "+",
     isPromoOpen: false,
     seeItemBtnName: seeItemDetailsLable,
+    seeItemBtnSign: "+",
     isSeeItemOpen: false,
     estimatedTotal: product.originalPrice + product.savings + product.tax,        
     promoInput: "",
@@ -32,9 +34,15 @@ import {DISCOUNT,NODISCOUNT } from "./constants";
           this.setState({
             promoBtnName: applyPromoCodeLabel 
           });
+          this.setState({
+            promoBtnSign: "+" 
+          });
         } else {
           this.setState({
             promoBtnName: hidePromoCodeLabel
+          });
+          this.setState({
+            promoBtnSign: "-" 
           });
         }
         break;
@@ -42,13 +50,22 @@ import {DISCOUNT,NODISCOUNT } from "./constants";
         this.setState({
           isSeeItemOpen: !this.state.isSeeItemOpen
         });
+        this.setState({
+          promoBtnSign: "+" 
+        });
         if (this.state.isSeeItemOpen) {
           this.setState({
             seeItemBtnName: seeItemDetailsLable
           });
+          this.setState({
+            seeItemBtnSign: "+" 
+          });
         } else {
           this.setState({
             seeItemBtnName: hideItemDetailsLable
+          });
+          this.setState({
+            seeItemBtnSign: "-" 
           });
         }
         break;
@@ -73,6 +90,7 @@ import {DISCOUNT,NODISCOUNT } from "./constants";
   };
 
   render() {
+    
     return (
       <div className="container">
         <Payment
@@ -111,6 +129,7 @@ import {DISCOUNT,NODISCOUNT } from "./constants";
               btnName={this.state.seeItemBtnName}
               click={this.changeBtnName.bind(this, "seeItem")}
               underLineStyle="underline"
+              sign={this.state.seeItemBtnSign}
             />
           </div>
         </div>
@@ -122,6 +141,7 @@ import {DISCOUNT,NODISCOUNT } from "./constants";
               onClickApply={this.CalculateDiscount}
               change={this.onChangeHandler}
               underLineStyle="underline"
+              sign={this.state.promoBtnSign}
             />
           </div>
         </div>
