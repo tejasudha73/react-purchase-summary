@@ -16,8 +16,7 @@ import {DISCOUNT,NODISCOUNT } from "./constants";
     isPromoOpen: false,
     seeItemBtnName: seeItemDetailsLable,
     isSeeItemOpen: false,
-    estimatedTotal: product.originalPrice + product.savings + product.tax,    
-    //discount: this.props.discount,
+    estimatedTotal: product.originalPrice + product.savings + product.tax,        
     promoInput: "",
   };
 
@@ -82,8 +81,7 @@ import {DISCOUNT,NODISCOUNT } from "./constants";
         />
 
         <Payment
-          name="Pickup Savings"
-          toolTipTitle={this.state.toolTipTitle}
+          name="Pickup Savings"          
           amount={
             product.savings > 0
               ? "$" + product.savings
