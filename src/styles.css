@@ -1,0 +1,52 @@
+.App {
+  font-family: sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.row {
+  margin-bottom: 3%;
+}
+
+.large.tooltip-inner {
+  width: 50px;
+  max-width: 50px;
+}
+
+.underline,
+.btn-link {
+  text-decoration: underline;
+  color: black;
+}
+
+.amountTextColor {
+  color: red;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+}
+
+.quantity {
+  float: right;
+}
+
+img {
+  height: 100px;
+  float: left;
+  width: 100px;
+}
+
+[name="promoCode"] {
+  margin: 5px;
+}
+
+[name="apply"] {
+  border-radius: 10px;
+}
+
+.summaryAmount span{
+  float: right;
+}
